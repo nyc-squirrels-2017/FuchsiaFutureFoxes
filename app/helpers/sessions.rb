@@ -4,5 +4,5 @@ def current_user
 end
 
 def require_user
-  redirect '/user/new' unless current_user
+  redirect '/users/new' unless current_user
 end
