@@ -1,5 +1,3 @@
 get '/' do
-  @questions = Question.all.reverse
-  @users = User
-  erb :'index'
+  redirect '/questions'
 end

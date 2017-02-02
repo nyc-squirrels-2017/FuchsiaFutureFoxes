@@ -33,11 +33,11 @@ get '/users/logout' do
   redirect '/'
 end
 
+get '/users/profile' do
+  erb :'users/profile'
+end
+
 get '/users/:id' do
   @user = User.find(params[:id]) #define instance variable for view
   erb :'users/profile' #show single user view
-end
-
-get '/users/profile' do
-  erb :'users/profile'
 end
