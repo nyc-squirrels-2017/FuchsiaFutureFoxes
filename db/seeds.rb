@@ -7,7 +7,7 @@ Vote.delete_all
 user1 = User.create!({
   :username => "benjimon",
   :email => "benjimon@digimon.com",
-  :password_digest => "digimon"
+  :password => "digimon"
   })
 
 answer1 = Answer.create!({
