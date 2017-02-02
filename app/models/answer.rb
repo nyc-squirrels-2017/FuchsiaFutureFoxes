@@ -1,3 +1,7 @@
 class Answer < ActiveRecord::Base
-  # Remember to create a migration!
+  validates :description, presence: true
+  has_many :votes, as: :voteable
+  has_many :comments, as: :commentable
+  belongs_to :user
+  belongs_to :question
 end
