@@ -24,15 +24,15 @@
 <body>
   <nav>
    <div class="nav" >
-     <a href="questions/index" style="font-family:'Montserrat', sans-serif;" class="brand-logo">&nbsp; Fuschia Future Foxes Overflow</a>
+     <a href="questions/index" >Fuschia Future Foxes Overflow</a>
      <ul id="nav-mobile" class="right hide-on-med-and-down">
        <% if current_user %>
          <li><a href="/questions/new">Post Question</a></li>
          <li><a href="/users/profile"><%=current_user.username%>'s Profile</a></li>
          <li><a href="/users/logout">Logout</a></li>
        <% else %>
-       <li><a href="/users/login" style="color: black " >Log In</a></li>
-       <li><a href="/users/new" style="color: black " >Sign Up</a></li>
+       <li><a href="/users/login">Log In</a></li>
+       <li><a href="/users/new">Sign Up</a></li>
        <% end%>
      </ul>
    </div>
