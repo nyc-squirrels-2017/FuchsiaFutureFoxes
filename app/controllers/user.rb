@@ -1,8 +1,8 @@
-get '/user/new' do
+get '/users/new' do
   erb :'user/new' #show new user view
 end
 
-post '/user' do #new user post request
+post '/users' do #new user post request
   @user = User.new(params[:user])
   if @user.save #saves new user or returns false if unsuccessful
     session[:user_id] = @user.id
@@ -13,11 +13,11 @@ post '/user' do #new user post request
   end
 end
 
-get '/user/login' do #user login route
+get '/users/login' do #user login route
   erb :'user/login'
 end
 
-post '/user/login' do #user login post request
+post '/users/login' do #user login post request
   @user = User.find_by(username: params[:user][:username])
   if @user && @user.authenticate(params[:user][:password])
     session[:user_id] = @user.id
@@ -28,16 +28,16 @@ post '/user/login' do #user login post request
   end
 end
 
-get '/user/logout' do
+get '/users/logout' do
   session.clear
   redirect '/'
 end
 
-get '/user/:id' do
+get '/users/:id' do
   @user = User.find(params[:id]) #define instance variable for view
   erb :'user/profile' #show single user view
 end
 
-get '/user/profile' do
+get '/users/profile' do
   erb :'user/profile'
 end
