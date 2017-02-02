@@ -6,7 +6,7 @@ post '/users' do #new user post request
   @user = User.new(params[:user])
   if @user.save #saves new user or returns false if unsuccessful
     session[:user_id] = @user.id
-    redirect '/'
+    redirect 'questions/index'
   else
     @errors = @user.errors.full_messages
     erb :'users/new' # show new user view again(potentially displaying errors)
