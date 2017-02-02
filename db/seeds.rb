@@ -7,20 +7,20 @@ Vote.delete_all
 user1 = User.create!({
   :username => "benjimon",
   :email => "benjimon@digimon.com",
-  :password => "digimon"
+  :password_digest => "digimon"
   })
 
 answer1 = Answer.create!({
   :description => "Pokemon Silver",
-  :user_id => user1.id,
-  :question_id => question1.id
+  :user_id => 1,
+  :question_id => 1
   })
 
 question1 = Question.create!({
   :title => "What is the best pokemon game?",
   :description => "Idk which one to play?",
-  :user_id => user1.id,
-  :answer_id => answer1.id
+  :user_id => 1,
+  :answer_id => 1
   })
 
 comment1 = Comment.create!({
@@ -33,5 +33,6 @@ comment1 = Comment.create!({
 vote1 = Vote.create!({
   :user_id => user1.id,
   :voteable_id => answer1.id,
-  :voteable_type => answer1.class
+  :voteable_type => answer1.class,
+  :value => 1
   })
