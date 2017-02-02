@@ -1,5 +1,5 @@
 get '/questions' do
   @questions = Question.all.reverse
-  @users = User
+  @users = User.all
   erb :'questions/index'
 end
