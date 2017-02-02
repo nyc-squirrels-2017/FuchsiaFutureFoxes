@@ -28,11 +28,11 @@
      <ul id="nav-mobile" class="right hide-on-med-and-down">
        <% if current_user %>
          <li><a href="/questions/new">Post Question</a></li>
-         <li><a href="/user/profile"><%=current_user.username%>'s Profile</a></li>
-         <li><a href="/user/logout">Logout</a></li>
+         <li><a href="/users/profile"><%=current_user.username%>'s Profile</a></li>
+         <li><a href="/users/logout">Logout</a></li>
        <% else %>
-       <li><a href="/user/login" style="color: black " >Log In</a></li>
-       <li><a href="/user/new" style="color: black " >Sign Up</a></li>
+       <li><a href="/users/login" style="color: black " >Log In</a></li>
+       <li><a href="/users/new" style="color: black " >Sign Up</a></li>
        <% end%>
      </ul>
    </div>
