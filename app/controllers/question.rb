@@ -26,3 +26,23 @@ post '/questions' do
     erb :'/questions/new' # show new questions view again(potentially displaying errors)
   end
 end
+
+get '/questions/:id/answers/new' do
+  @question = Question.find(params[:id])
+  erb :'/answers/new'
+end
+
+post '/questions/:id/answers' do
+  @question = Question.find(params[:id])
+  @user = current_user
+  @answer = Answer.new(params[:answer])
+  @answer.question_id = @question.id
+  @answer.user = @user
+  # binding.pry
+
+  if @answer.save
+    redirect "/questions/#{@question.id}"
+  else
+    erb :"/answers/new"
+  end
+end
