@@ -21,7 +21,7 @@
     <% end %>
   </div>
 
-<form class="submit-answer" action="/answers/new" method="get">
+<form class="submit-answer" action="/questions/<%=@question.id%>/answers/new" method="get">
   <input type="submit" name="" value="Post Answer">
 </form>
 
