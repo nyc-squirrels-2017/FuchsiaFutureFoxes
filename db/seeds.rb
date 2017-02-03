@@ -37,7 +37,11 @@ Vote.delete_all
 #   :value => 1
 #   })
 
-
+User.create!({
+ :username => "test",
+ :email =>  "t@t.com",
+ :password => "password"
+ })
 
 10.times do (
    user = User.create!({
@@ -48,15 +52,15 @@ Vote.delete_all
 
   answer =  Answer.create!({
       :description => Faker::Lorem.sentence,
-      :user_id => rand(1..11),
-      :question_id => rand(1..11)
+      :user_id => rand(1..10),
+      :question_id => rand(1..10)
       })
 
   question =  Question.create!({
         :title => Faker::Name.title,
         :description => Faker::Lorem.sentence,
-        :user_id => rand(1..11),
-        :answer_id => rand(1..11)
+        :user_id => rand(1..10),
+        :answer_id => rand(1..10)
         })
 
     Comment.create!({
