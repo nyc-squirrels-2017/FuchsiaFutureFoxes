@@ -419,6 +419,6 @@ there.
 
 
   nav {
-    background: linear-gradient(#ff79c6,orange);
-    border-bottom: 100px solid green;
+    background: linear-gradient(#ff79c6,orange, aquamarine);
+    border-bottom: 20px solid aquamarine;
   }
