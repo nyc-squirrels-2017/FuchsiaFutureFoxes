@@ -26,6 +26,9 @@
     <% end %>
   </div>
 
+  <% if @question.user_id == current_user.id %>
+  <a href="/questions/<%=@question.id%>/edit">Edit</a>
+  <% end %>
 
   <form class="submit-answer" action="/questions/<%=@question.id%>/answers/new" method="get">
     <input type="submit" name="" value="Post Answer">
@@ -77,6 +80,10 @@
         <% end %>
       </div>
 
+      <% if answer.user_id == current_user.id %>
+      <a href="/answers/<%=answer.id%>/edit">Edit</a>
+      <% end %>
+
       <form class="submit-comment" action="/answers/<%=answer.id%>/comments/new" method="get">
         <input type="submit" name="" value="Post Comment">
       </form>
@@ -84,5 +91,5 @@
     </div>
   </div>
   <hr>
-<% end %>
+<%end%>
 </div>

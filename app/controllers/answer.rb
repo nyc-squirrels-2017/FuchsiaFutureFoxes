@@ -17,3 +17,17 @@ post '/answers/:id/comments' do
     erb :"/comments/new"
   end
 end
+
+
+get '/answers/:id/edit' do
+  @answer = Answer.find(params[:id])
+  erb :"/answers/edit"
+
+end
+
+
+put '/answers/:id' do
+  @answer = Answer.find(params[:id])
+  @answer.update(params[:answer])
+  redirect "/questions/#{@answer.question.id}"
+end

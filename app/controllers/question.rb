@@ -66,3 +66,14 @@ post '/questions/:id/comments' do
     erb :"/comments/new"
   end
 end
+
+get '/questions/:id/edit' do
+  @question = Question.find(params[:id])
+  erb :"/questions/edit"
+end
+
+put '/questions/:id' do
+  @question = Question.find(params[:id])
+  @question.update(params[:question])
+  redirect "/questions/#{@question.id}"
+end
