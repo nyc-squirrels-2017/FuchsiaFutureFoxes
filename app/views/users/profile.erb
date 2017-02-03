@@ -1,3 +1,15 @@
 <div class="">
-  <h1> Welcome to your progile <%= current_user.username %> </h1>
+  <h1> Welcome to your profile, <%= current_user.username %> !</h1>
+
+  <h2> Here are the questions you have asked:</h2>
+
+    <%current_user.questions.each do |question| %>
+    <a href="/questions/<%=question.id%>"> <%= question.description %> </a>
+      <%end%>
+
+<h2>Here are all the answers you have submitted: </h2>
+      <%current_user.answers.each do |answer| %>
+      <a href="/questions/<%=answer.question.id%>"> <%= answer.description %> </a>
+        <%end%>
+
 </div>
