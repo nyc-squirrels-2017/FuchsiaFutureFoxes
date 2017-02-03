@@ -46,3 +46,23 @@ post '/questions/:id/answers' do
     erb :"/answers/new"
   end
 end
+
+get '/questions/:id/comments/new' do
+  @question = Question.find(params[:id])
+  erb :'/comments/new', locals: {commentable: @question}
+end
+
+post '/questions/:id/comments' do
+  @question = Question.find(params[:id])
+  @user = current_user
+  @comment = Comment.new(params[:commentable])
+  @comment.commentable_id = @question.id
+  @comment.commentable_type = 'Question'
+  @comment.user = @user
+  # binding.pry
+  if @comment.save
+    redirect "/questions/#{@question.id}"
+  else
+    erb :"/comments/new"
+  end
+end
