@@ -37,20 +37,33 @@
 
 </div>
 
+
+
+<!-- ########################ANSWERS###################### -->
+
+<div class="answer">
+  <hr>
+
 <h2><%= @question.answers.count%> Answers</h2>
 <div class="answer">
 <% @question.answers.each do |answer| %>
 
+<div class="vote-buttons">
 
 <form class="up-vote-btn" action="/answers/<%=answer.id%>/upvote" method="post">
-  <input type="submit" name="upvote" value="Upvote">
+  <button class="small material-icons" type="submit"> <i class="small material-icons right">thumb_up</i>
+  </button>
 </form>
 
 <%= answer.total_value%>
 
 <form class="dwn-vote-btn" action="/answers/<%=answer.id%>/downvote" method="post">
-  <input type="submit" name="downvote" value="Downvote">
+  <button class="small material-icons" type="submit"> <i class="small material-icons right">thumb_down</i>
+  </button>
 </form>
+</div>
+
+<div class="post-body">
 
 <p>Answer Body: <%= answer.description %></p>
 <h5>Answer posted by: <%=answer.user.username%></h5>
@@ -67,4 +80,6 @@
 </form>
 
 <% end %>
+</div>
+</div>
 </div>
