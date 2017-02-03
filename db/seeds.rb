@@ -43,6 +43,7 @@ User.create!({
  :password => "password"
  })
 
+
 10.times do (
    user = User.create!({
     :username => Faker::Internet.user_name,
