@@ -1,7 +1,19 @@
 <h1>This is our Home page</h1>
 <% @questions.each do |question| %>
 <% if current_user %>
-<%= erb :'/partials/_votes' %>
+
+
+<form class="up-vote-btn" action="/questions/<%=question.id%>/upvote" method="post">
+  <input type="submit" name="upvote" value="Upvote">
+</form>
+
+<%= question.total_value%>
+
+<form class="dwn-vote-btn" action="/questions/<%=question.id%>/downvote" method="post">
+  <input type="submit" name="downvote" value="Downvote">
+</form>
+
+
 
 <% end %>
   <a href="/questions/<%= question.id %>"> <%= question.title %> </a>

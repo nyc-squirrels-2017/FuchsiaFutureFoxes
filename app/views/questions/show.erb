@@ -1,4 +1,15 @@
 <div class="question">
+
+  <form class="up-vote-btn" action="/questions/<%=@question.id%>/upvote" method="post">
+    <input type="submit" name="upvote" value="Upvote">
+  </form>
+
+  <%= @question.total_value%>
+
+  <form class="dwn-vote-btn" action="/questions/<%=@question.id%>/downvote" method="post">
+    <input type="submit" name="downvote" value="Downvote">
+  </form>
+
 <h1><%=@question.title%></h1>
 <h5><%=@question.user.username%></h5>
 <p><%=@question.description%></p>
@@ -7,6 +18,17 @@
 <h2><%= @question.answers.count%> Answers</h2>
 <div class="answer">
 <% @question.answers.each do |answer| %>
+
+<form class="up-vote-btn" action="/questions/<%=@question.id%>/upvote" method="post">
+  <input type="submit" name="upvote" value="Upvote">
+</form>
+
+<%= @question.total_value%>
+
+<form class="dwn-vote-btn" action="/questions/<%=@question.id%>/downvote" method="post">
+  <input type="submit" name="downvote" value="Downvote">
+</form>
+
 <p><%= answer.description %></p>
 <h5><%=answer.user.username%></h5>
 <% end %>
