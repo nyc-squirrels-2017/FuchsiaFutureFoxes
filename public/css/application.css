@@ -3,6 +3,52 @@
 
   }
 
+  .home-vote-buttons {
+    /*text-align: center;*/
+    display: inline-block;
+    max-width: 20%;
+    /*border: 1px solid green;*/
+    margin: 5px;
+    vertical-align: top;
+    text-align: center;
+    padding-top: 5%;
+  }
+
+
+  .home-post-body{
+    display: inline-block;
+    width: 50%;
+    /*border: 1px solid red;*/
+    margin-top: 10%;
+
+   }
+
+  .home-post{
+    /*border: 1px solid black;*/
+    margin: 5px;
+    width: 70%;
+  }
+
+.home-hr{
+    height: 1.5px;
+    background-color:  #009688 ;
+    width: 200%;
+    text-align: left;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .vote-buttons {
   /*text-align: center;*/
   display: inline-block;
@@ -39,6 +85,7 @@
   /*border: 1px solid orange;*/
 
 }
+
 hr{
   height: 2.5px;
   background-color:  #009688 ;
