@@ -22,14 +22,18 @@
   <div class="question-comments">
     <% @question.comments.each do |comment| %>
       comment body: <%= comment.description%> <br>
-      Posted by: <%= comment.user.username%> on <%= comment.created_at%>
+      Posted by: <%= comment.user.username%> on <%= comment.created_at%> <br>
     <% end %>
   </div>
 
-<form class="submit-answer" action="/questions/<%=@question.id%>/answers/new" method="get">
-  <input type="submit" name="" value="Post Answer">
-</form>
-</div>
+  <form class="submit-answer" action="/questions/<%=@question.id%>/answers/new" method="get">
+    <input type="submit" name="" value="Post Answer">
+  </form>
+
+  <form class="submit-comment" action="/questions/<%=@question.id%>/comments/new" method="get">
+    <input type="submit" name="" value="Post Comment">
+  </form>
+  </div>
 
 </div>
 
@@ -67,9 +71,13 @@
 <div class="answer-comments">
   <% answer.comments.each do |comment| %>
     <%= comment.description%> <br>
-    Posted by: <%= comment.user.username%> on <%= comment.created_at%>
+    Posted by: <%= comment.user.username%> on <%= comment.created_at%><br>
   <% end %>
 </div>
+
+<form class="submit-comment" action="/answers/<%=answer.id%>/comments/new" method="get">
+  <input type="submit" name="" value="Post Comment">
+</form>
 
 <% end %>
 </div>
