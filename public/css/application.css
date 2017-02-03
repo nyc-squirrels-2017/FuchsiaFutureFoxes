@@ -1,0 +1,25 @@
+.homepage {
+  /*background-color:  black;*/
+
+  }
+
+.vote-buttons {
+  /*text-align: center;*/
+  display: inline-block;
+  width: 20%;
+  /*border: 1px solid green;*/
+  margin: 5px;
+}
+
+.post-body{
+  display: inline-block;
+  width: 70%;
+  /*border: 1px solid red;*/
+  margin: 5px;
+}
+
+.post{
+  border: 1px solid black;
+  margin: 5px;
+  width: 70%;
+}
