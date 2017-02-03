@@ -10,9 +10,21 @@
     <input type="submit" name="downvote" value="Downvote">
   </form>
 
-<h1><%=@question.title%></h1>
-<h5><%=@question.user.username%></h5>
-<p><%=@question.description%></p>
+<h1>Question Title: <%=@question.title%></h1>
+<h5>Question Posted By: <%=@question.user.username%></h5>
+<p>Question Body: <%=@question.description%></p>
+
+  <div class="question-comments">
+    <% @question.comments.each do |comment| %>
+      comment body: <%= comment.description%> <br>
+      Posted by: <%= comment.user.username%> on <%= comment.created_at%>
+    <% end %>
+  </div>
+
+<form class="submit-answer" action="/answers/new" method="get">
+  <input type="submit" name="" value="Post Answer">
+</form>
+
 </div>
 
 <h2><%= @question.answers.count%> Answers</h2>
@@ -30,7 +42,15 @@
   <input type="submit" name="downvote" value="Downvote">
 </form>
 
-<p><%= answer.description %></p>
-<h5><%=answer.user.username%></h5>
+<p>Answer Body: <%= answer.description %></p>
+<h5>Answer posted by: <%=answer.user.username%></h5>
+
+<div class="answer-comments">
+  <% answer.comments.each do |comment| %>
+    <%= comment.description%> <br>
+    Posted by: <%= comment.user.username%> on <%= comment.created_at%>
+  <% end %>
+</div>
+
 <% end %>
 </div>
