@@ -26,6 +26,7 @@
     <% end %>
   </div>
 
+
   <form class="submit-answer" action="/questions/<%=@question.id%>/answers/new" method="get">
     <input type="submit" name="" value="Post Answer">
   </form>
@@ -41,45 +42,47 @@
 
 <!-- ########################ANSWERS###################### -->
 
-<div class="answer">
+<div class="whole-answer">
   <hr>
 
 <h2><%= @question.answers.count%> Answers</h2>
-<div class="answer">
 <% @question.answers.each do |answer| %>
 
-<div class="vote-buttons">
+  <div class="answer">
 
-<form class="up-vote-btn" action="/answers/<%=answer.id%>/upvote" method="post">
-  <button class="small material-icons" type="submit"> <i class="small material-icons right">thumb_up</i>
-  </button>
-</form>
+    <div class="vote-buttons">
 
-<%= answer.total_value%>
+      <form class="up-vote-btn" action="/answers/<%=answer.id%>/upvote" method="post">
+        <button class="small material-icons" type="submit"> <i class="small material-icons right">thumb_up</i>
+        </button>
+      </form>
 
-<form class="dwn-vote-btn" action="/answers/<%=answer.id%>/downvote" method="post">
-  <button class="small material-icons" type="submit"> <i class="small material-icons right">thumb_down</i>
-  </button>
-</form>
-</div>
+      <%= answer.total_value%>
 
-<div class="post-body">
+      <form class="dwn-vote-btn" action="/answers/<%=answer.id%>/downvote" method="post">
+        <button class="small material-icons" type="submit"> <i class="small material-icons right">thumb_down</i>
+        </button>
+      </form>
+    </div>
 
-<p>Answer Body: <%= answer.description %></p>
-<h5>Answer posted by: <%=answer.user.username%></h5>
+    <div class="post-body">
 
-<div class="answer-comments">
-  <% answer.comments.each do |comment| %>
-    <%= comment.description%> <br>
-    Posted by: <%= comment.user.username%> on <%= comment.created_at%><br>
-  <% end %>
-</div>
+      <p>Answer Body: <%= answer.description %></p>
+      <h5>Answer posted by: <%=answer.user.username%></h5>
 
-<form class="submit-comment" action="/answers/<%=answer.id%>/comments/new" method="get">
-  <input type="submit" name="" value="Post Comment">
-</form>
+      <div class="answer-comments">
+        <% answer.comments.each do |comment| %>
+          <%= comment.description%> <br>
+          Posted by: <%= comment.user.username%> on <%= comment.created_at%><br>
+        <% end %>
+      </div>
 
+      <form class="submit-comment" action="/answers/<%=answer.id%>/comments/new" method="get">
+        <input type="submit" name="" value="Post Comment">
+      </form>
+
+    </div>
+  </div>
+  <hr>
 <% end %>
-</div>
-</div>
 </div>
