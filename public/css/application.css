@@ -6,20 +6,27 @@
 .vote-buttons {
   /*text-align: center;*/
   display: inline-block;
-  width: 20%;
+  max-width: 20%;
   /*border: 1px solid green;*/
   margin: 5px;
+  vertical-align: top;
+  text-align: center;
+  padding-top: 5%;
 }
 
 .post-body{
   display: inline-block;
-  width: 70%;
+  width: 50%;
   /*border: 1px solid red;*/
   margin: 5px;
-}
+ }
 
 .post{
   border: 1px solid black;
   margin: 5px;
   width: 70%;
+}
+
+.question {
+  border: 1px solid black;
 }

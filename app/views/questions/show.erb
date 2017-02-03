@@ -1,18 +1,23 @@
 <div class="question">
 
+<div class="vote-buttons">
   <form class="up-vote-btn" action="/questions/<%=@question.id%>/upvote" method="post">
-    <input type="submit" name="upvote" value="Upvote">
+    <button class="small material-icons" type="submit"> <i class="small material-icons right">thumb_up</i>
+    </button>
   </form>
 
   <%= @question.total_value%>
 
   <form class="dwn-vote-btn" action="/questions/<%=@question.id%>/downvote" method="post">
-    <input type="submit" name="downvote" value="Downvote">
+    <button class="small material-icons" type="submit"> <i class="small material-icons right">thumb_down</i>
+    </button>
   </form>
+</div>
 
-<h1>Question Title: <%=@question.title%></h1>
-<h5>Question Posted By: <%=@question.user.username%></h5>
-<p>Question Body: <%=@question.description%></p>
+<div class="post-body">
+  <h1>Question Title: <%=@question.title%></h1>
+  <h5>Question Posted By: <%=@question.user.username%></h5>
+  <p>Question Body: <%=@question.description%></p>
 
   <div class="question-comments">
     <% @question.comments.each do |comment| %>
@@ -24,6 +29,7 @@
 <form class="submit-answer" action="/questions/<%=@question.id%>/answers/new" method="get">
   <input type="submit" name="" value="Post Answer">
 </form>
+</div>
 
 </div>
 
