@@ -417,7 +417,6 @@ there.
 /* Larger than Desktop HD */
 @media (min-width: 1200px) {}
 
-
   nav {
     background: linear-gradient(#ff79c6,orange, aquamarine);
     border-bottom: 20px solid aquamarine;
